@@ -8,14 +8,14 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('http://localhost:8080/v2/api/match/8', {
+    fetch('http://localhost:7777/v2/api/match/8', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        players: ["Nams", "Amit", "Jose","Roger","Raj", "Phani", "GSM","Paul"],
+        players: ["Ashish", "Amit", "Jose","Roger","Raj", "Phani", "GSM","Paul"],
         full: 'true',
         startDate: '2022-10-31T09:00:00.594Z',
       })
