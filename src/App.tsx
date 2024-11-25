@@ -8,7 +8,18 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('https://9e867b57d63f41bdb023bb340062019f.api.mockbin.io/')
+    fetch('http://localhost:8080/v2/api/match/8', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        players: ["Nams", "Amit", "Jose","Roger","Raj", "Phani", "GSM","Paul"],
+        full: 'true',
+        startDate: '2022-10-31T09:00:00.594Z',
+      })
+    })
         .then((response) => {
           if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
